@@ -6,7 +6,7 @@ import java.util.concurrent.ExecutionException;
 public class CompletableFutureTaskSupplyAsync {
 	
 	public static void main(String[] args) {
-        CompletableFuture completableFuture =
+        CompletableFuture<String> completableFuture =
             CompletableFuture.supplyAsync(()-> "CompletableFuture example");
         try {
             System.out.println(completableFuture.get());
@@ -14,7 +14,7 @@ public class CompletableFutureTaskSupplyAsync {
             e.printStackTrace();
         }
             
-        CompletableFuture completableFuture2 = CompletableFuture.supplyAsync(()-> 50);
+        CompletableFuture<Integer> completableFuture2 = CompletableFuture.supplyAsync(()-> 50);
         try {
             System.out.println(completableFuture2.get());
         } catch (InterruptedException | ExecutionException e) {
